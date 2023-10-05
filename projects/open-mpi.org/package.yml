@@ -46,9 +46,8 @@ build:
   env:
     CXXFLAGS: $CXXFLAGS -std=c++11
     darwin:
-      CC: clang
-      CXX: clang++
-      LD: clang
+      CFLAGS: $CFLAGS -Wl,-rpath,{{pkgx.prefix}}
+      CXXFLAGS: $CFLAGS -Wl,-rpath,{{pkgx.prefix}}
     CONFIGURE_ARGS:
       - --disable-debug
       - --disable-dependency-tracking
