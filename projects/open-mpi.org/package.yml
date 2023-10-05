@@ -45,6 +45,10 @@ build:
     - install {{prefix}}/lib/*.mod {{prefix}}/include/
   env:
     CXXFLAGS: $CXXFLAGS -std=c++11
+    darwin:
+      CC: clang
+      CXX: clang++
+      LD: clang
     CONFIGURE_ARGS:
       - --disable-debug
       - --disable-dependency-tracking
